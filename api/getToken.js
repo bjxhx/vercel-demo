@@ -3,6 +3,6 @@ export default function handler(request, response) {
     console.log("request：")
     console.log(request)
     // console.log(response)
-    response.status(200).send(`param: ${request.body}`);
+    response.status(200).send(`param: ${JSON.stringify(request.body)}`);
   }
   
