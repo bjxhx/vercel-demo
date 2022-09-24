@@ -1,12 +1,11 @@
 {
-  "dependencies": {
-    "dotenv": "^16.0.2",
-    "fastify": "^4.6.0"
-  },
   "engines": {
     "node": "16.x"
   },
   "devDependencies": {
     "@vercel/node": "^2.5.18"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
   }
 }
