@@ -33,19 +33,25 @@ function getTime() {
   return new Date().getTime();
 }
 export default async function handler(request, response) {
-  const start = getTime();
-
-  const data = await selectAll();
-
-  const end = getTime();
-
-  const result = {
-    code :0,
-    message:"success",
-    time:end - start,
-    data:data
+  try {
+    const start = getTime();
+    const data = await selectAll();
+    const end = getTime();
+    const result = {
+      code :0,
+      message:"success",
+      time:end - start,
+      data:data
+    }
+    response.status(200).send(result);
+  } catch (error) {
+    const result = {
+      code: 500,
+      message: `${error}`,
+    };
+    response.status(500).send(result);
   }
-  response.status(200).send(result);
+
 }
 
 
